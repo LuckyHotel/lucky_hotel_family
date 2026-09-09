@@ -189,9 +189,9 @@ const SEED = {
     ],
     roomBookings: [],
     venues: [
-        { id: uid(), key: "hall", name: HALL_NAME, capacity: 250, price: 45000 },
-        { id: uid(), key: "lawns", name: LAWNS_NAME, capacity: 400, price: 60000 },
-        { id: uid(), key: "birthday", name: BIRTHDAY_NAME, capacity: 80, price: 20000 },
+        { id: uid(), key: "hall", name: HALL_NAME, capacity: 250, price: 12000 },
+        { id: uid(), key: "lawns", name: LAWNS_NAME, capacity: 400, price: 20000 },
+        { id: uid(), key: "birthday", name: BIRTHDAY_NAME, capacity: 80, price: 8000 },
     ],
     venueBookings: [],
     tables: [
@@ -220,7 +220,7 @@ const SEED = {
         gstin: "",
         upiId: "",
     },
-    festival: { active: false, name: "", startedAt: null, percent: 20 },
+    festival: { active: false, name: "", startedAt: null, percent: 25 },
 };
 /* ---------- storage: Firestore, real-time across every device with internet ---------- */
 const VALID_ROOM_TYPES = ["Non-AC", "AC", "Deluxe"];
