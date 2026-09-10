@@ -1818,7 +1818,8 @@ function FoodOrder({ menu, orders, setOrders, user, tables, setTables, festival 
                         room,
                         " already has an order \u2014 anything you add below joins that same order."),
                     React.createElement("div", { style: { fontSize: 12, color: COLORS.muted } },
-                        existingOrderForTable.items.map(i => React.createElement("div", { style: { display: "flex", alignItems: "center", justifyContent: "space-between" } }, React.createElement("span", null, {i.qty}×{i.name}), React.createElement("button", { onClick: () => removeFromCart(i) }, "Remove")));                        " \u00B7 \u20B9",
+                        existingOrderForTable.items.map(i => React.createElement("div", { style: { display: "flex", alignItems: "center", justifyContent: "space-between" } }, React.createElement("span", null, {i.qty}×{i.name}), React.createElement("button", { onClick: () => removeFromCart(i) }, "Remove")));                   
+                         " \u00B7 \u20B9",
                         existingOrderForTable.total))),
                 React.createElement("div", { style: { fontSize: 12.5, color: COLORS.muted, fontWeight: 600, marginBottom: 8 } }, "2. Add food"),
                 React.createElement("div", { style: { position: "relative", marginBottom: 14 } },
