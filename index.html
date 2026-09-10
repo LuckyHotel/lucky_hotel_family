@@ -1758,6 +1758,7 @@ function FoodOrder({ menu, orders, setOrders, user, tables, setTables, festival 
     const active = isFestivalActive(festival);
     const priceFor = (item) => festivalPrice(item.price, festival);
     const addToCart = (item) => setCart(Object.assign(Object.assign({}, cart), { [item.id]: (cart[item.id] || 0) + 1 }));
+    const removefromcart = (item) => { const newCart = { ...cart }; delete newCart[item.id]; setCart(newCart); }; 
     const total = Object.entries(cart).reduce((sum, [id, qty]) => {
         const m = menu.find(x => x.id === id);
         return sum + (m ? priceFor(m) : 0) * qty;
@@ -1817,8 +1818,7 @@ function FoodOrder({ menu, orders, setOrders, user, tables, setTables, festival 
                         room,
                         " already has an order \u2014 anything you add below joins that same order."),
                     React.createElement("div", { style: { fontSize: 12, color: COLORS.muted } },
-                        existingOrderForTable.items.map(i => `${i.qty}× ${i.name}`).join(", "),
-                        " \u00B7 \u20B9",
+                        existingOrderForTable.items.map(i => React.createElement("div", { style: { display: "flex", alignItems: "center", justifyContent: "space-between" } }, React.createElement("span", null, {i.qty}×{i.name}), React.createElement("button", { onClick: () => removeFromCart(i) }, "Remove")));                        " \u00B7 \u20B9",
                         existingOrderForTable.total))),
                 React.createElement("div", { style: { fontSize: 12.5, color: COLORS.muted, fontWeight: 600, marginBottom: 8 } }, "2. Add food"),
                 React.createElement("div", { style: { position: "relative", marginBottom: 14 } },
